@@ -24,7 +24,7 @@ console.log(
 // > [ 'toPairs', 'toPairsIn' ]
 ```
 
-…because, where you really going to read the docs?
+…because, were you really going to read the docs?
 
 ## Install
 
