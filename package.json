@@ -1,0 +1,30 @@
+{
+  "name": "which-ramda-function-should-i-use",
+  "version": "0.0.1",
+  "description": "Which Ramda function should you use",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xaviervia/which-ramda-function-should-i-use.git"
+  },
+  "author": "Fernando Via Canel <fernando.via@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.55",
+    "@babel/core": "^7.0.0-beta.55",
+    "@babel/node": "^7.0.0-beta.55",
+    "@babel/preset-env": "^7.0.0-beta.55",
+    "washington": "^2.0.0-rc.5"
+  },
+  "scripts": {
+    "build": "babel src/ -d dist/",
+    "test": "babel-node test",
+    "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "ramda": "^0.26.0"
+  }
+}
