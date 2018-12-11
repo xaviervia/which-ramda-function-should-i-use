@@ -31,3 +31,21 @@ console.log(
 ```
 yarn add which-ramda-function-should-i-use
 ```
+
+## CLI
+
+```shell
+whichramda -j '{ "a": 1, "b": 2 }' '[["a", 1], ["b", 2]]'
+# outputs ["toPairs","toPairsIn"]
+
+# Or, having a file: lol.json
+# {
+#   "input": {
+#     "a": 1,
+#     "b": 2
+#   },
+#   "output": [["a", 1], ["b", 2]]
+# }
+whichramda -f lol.json
+# outputs ["toPairs","toPairsIn"]
+```
