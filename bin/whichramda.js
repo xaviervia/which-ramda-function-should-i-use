@@ -4,6 +4,7 @@ var fs = require("fs");
 var whichRamda = require("../dist").default;
 
 var args = process.argv.slice(2);
+var executable = process.argv[1].split(/[\\\/]/g).pop()
 
 var mode = args.shift();
 if (["-j", "--json", "-f", "--file"].indexOf(mode) === -1){
@@ -37,7 +38,6 @@ switch (mode) {
 
   case "--file":
   case "-f":
-  default:
     try {
         var file = args.shift();
         var fileContent = fs.readFileSync(file).toString();
@@ -50,6 +50,23 @@ switch (mode) {
         console.error(e.message);
         console.error(e.stack);
     }
+    break;
+
+    case "-h":
+    case "--help":
+    default:
+      console.log("Usage: ")
+      console.log(`${executable} (-f|-j|-h|--file|--json|--help) (inputs+|inputfilepath) (output?)`)
+      console.log(`
+      -f, --file\t\tFind which ramda fits your "inputfilepath" of shape: { input: any[], output: any } 
+      -j, --json\t\tFind which ramda fits your "inputs" to produce an "output".
+      -h, --help\t\tHelps.
+      `)
+      console.log(`
+      Examples: 
+      \t${executable} -j '{ "a": 1, "b": 2 }' '[["a", 1], ["b", 2]]'
+      \t${executable} -f lol.json
+      `)
     break;
 }
 
