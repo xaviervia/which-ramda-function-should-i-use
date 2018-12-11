@@ -1,6 +1,6 @@
 {
   "name": "which-ramda-function-should-i-use",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Which Ramda function should you use",
   "main": "dist/index.js",
   "bin" : { "whichramda" : "./bin/whichramda.js" },
