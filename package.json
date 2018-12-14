@@ -1,10 +1,12 @@
 {
   "name": "which-ramda-function-should-i-use",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Which Ramda function should you use",
   "main": "dist/index.js",
+  "bin" : { "whichramda" : "./bin/whichramda.js" },
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   "scripts": {
     "build": "babel src/ -d dist/",
     "test": "babel-node test",
+    "test:cli": "./test/cliTests.sh",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
